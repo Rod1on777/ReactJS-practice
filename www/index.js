@@ -18,15 +18,20 @@ ReactDOM.render(<input placeholder='Help text' />, document.getElementById('app2
 
 
 //Функции для будущего использования (пишут всякое в консоль)
-const inputClick = () => console.log("Clicked")
+const inputClick = () => console.log("Clickeddd")
 const mouseOver = () => console.log("Mouse Overrr")
 
 const helpText = "Help text bebriki"
 
 
-
 // Ещё один формат вывода с помощью констанит
-const elements = <input placeholder={helpText} onClick={inputClick} onMouseEnter={mouseOver} /> //Создание констатны элемента input, вополняющую функцию inputClick при клике и mjuseOver при наведении
+const elements = (
+    <div className="elements">
+        <h1> Elements </h1>
+        <input placeholder={helpText} onClick={inputClick} onMouseEnter={mouseOver} /> //Создание констатны элемента input, вополняющую функцию inputClick при клике и mjuseOver при наведении
+        <p> {helpText == "Help text bebriki" ? "Yes" : "No"}</p>    //Условие: если helpText = "Help text bebriki", вывести yes, если нет, то no
+    </div>
+)
 const app = document.getElementById("app3")
 
 ReactDOM.render(elements, app)
